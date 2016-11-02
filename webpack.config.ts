@@ -192,8 +192,12 @@ const commonConfig = function webpackConfig(): WebpackConfig {
         threshold: 10240,
         minRatio: 0.8
       }),
-      new BundleAnalyzerPlugin(),
+      
+      new BundleAnalyzerPlugin({
+        startAnalyzer: false
+      }),
       ...MY_CLIENT_PRODUCTION_PLUGINS,
+      
     );
   }
 
