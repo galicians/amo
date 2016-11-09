@@ -1,0 +1,46 @@
+
+<section class="container animated fadeInUp">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div id="login-wrapper">
+        <header>
+          <div class="brand">
+          </div>
+        </header>
+        <!--<div class="row" ng-show="vm.isError">-->
+          <!--<error-panel></error-panel>-->
+        <!--</div>-->
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="post primary">
+              <p class="bold" ></p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" >
+              {{ 'customer.login.sign.in' | translate }}
+            </h3>
+          </div>
+          <div class="panel-body" >
+            <form class="form-horizontal"  name="login" id="enter-info" role="form" novalidate >
+              <div class="form-group" *ngFor="let question of idvQuestions">
+                <div class="col-md-12">
+                  <h4 class="header-login bold">{{question.name | translate}}</h4>
+                  <input type="text" id="{{question.name}}" [(ngModel)]='question.answer' name="{{question.name}}" maxlength="27" class="form-control login-input"  autocomplete='off'>
+                  <i class="fa fa-user login-icon"></i>
+                </div>
+              </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <button type="button" (click)="submitIdvResponses(idvQuestions)" id="login-btn" class="btn btn-primary btn-block">{{ 'customer.login.sign.in' | translate }}</button>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
