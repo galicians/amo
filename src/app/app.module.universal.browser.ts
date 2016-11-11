@@ -55,5 +55,9 @@ export function translateLoaderFactory(http: any) {
   bootstrap: [AppComponent],
   providers: [IdvResolver, IdvQuestionsService, jmxResolver]
 })
-export class AppModule { }
+export class AppModule { 
+    constructor() {
+      console.log('BROWSER APPMODULE CREATED!');
+    }
+}
 

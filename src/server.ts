@@ -15,9 +15,9 @@ import { enableProdMode } from '@angular/core';
 import { createEngine } from 'angular2-express-engine';
 
 // App
-import { AppModule } from './app/app.module.universal.node';
-import { routes } from './server.routes';
 import { HOST, UNIVERSAL_PORT } from '../constants';
+import { routes } from './server.routes';
+import { AppModule } from './app/app.module.universal.node';
 
 // enable prod for faster renders
 enableProdMode();
@@ -43,7 +43,7 @@ function ngApp(req, res) {
     req,
     res,
     ngModule: AppModule,
-    preboot: true,
+    preboot: { appRoot: 'app-root'},
     baseUrl: '/',
     requestUrl: req.originalUrl,
     originUrl: req.hostname
@@ -54,6 +54,7 @@ app.get('/', ngApp);
 routes.forEach(route => {
   app.get(`/${route}`, ngApp);
   app.get(`/${route}/*`, ngApp);
+  console.log("NODE GETTING ROUTE: ", route);
 });
 
 app.get('*', function(req, res) {

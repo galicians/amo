@@ -20,15 +20,15 @@ import { AppComponent } from './app.component';
 import { IdvModule } from "./idv/idv.module";
 import { WelcomeModule } from './welcome/welcome.module';
 import { IdvResolver } from "./idv/idv-questions.resolver";
-import { IdvQuestionsService } from "./idv/idv-questions.service";
+//import { IdvQuestionsService } from "./idv/idv-questions.service";
 import { jmxResolver } from "./shared/jmx.resolver";
 
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+//import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
 
-export function translateLoaderFactory(http: any) {
-  return new TranslateStaticLoader(http, 'assets/i18n', '.json');
-}
+// export function translateLoaderFactory(http: any) {
+//   return new TranslateStaticLoader(http, 'assets/i18n', '.json');
+// }
 
 
 @NgModule({
@@ -45,14 +45,18 @@ export function translateLoaderFactory(http: any) {
     IdvModule,
     WelcomeModule,
 
-    TranslateModule.forRoot({
-      provide: TranslateLoader,
-      //useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
-      useFactory: translateLoaderFactory,
-      deps: [Http]
-    })
+    // TranslateModule.forRoot({
+    //   provide: TranslateLoader,
+    //   //useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+    //   useFactory: translateLoaderFactory,
+    //   deps: [Http]
+    // })
   ],
   bootstrap: [AppComponent],
-  providers: [IdvResolver, IdvQuestionsService, jmxResolver]
+  providers: [IdvResolver, /*IdvQuestionsService,*/ jmxResolver]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+    console.log('NODE APPMODULE CREATED!');
+  }
+}

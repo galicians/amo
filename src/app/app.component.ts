@@ -4,7 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   template: '<router-outlet></router-outlet>',
-  styleUrls: ['./app.component.css'],
+  styles: [`.basic {
+  	background: red;
+  }`],
 
 })
 export class AppComponent {
@@ -12,6 +14,8 @@ export class AppComponent {
   constructor(
     public route: ActivatedRoute,
     public router: Router
-  ) { }
+  ) { 
+  		console.log( 'APPCOMPONENT CREATED!' );
+  }
 }
 
