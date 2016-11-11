@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import {TranslateService} from 'ng2-translate';
 
 @Component({
+  moduleId: module.id,
   selector: 'app-idv',
   templateUrl: './idv.component.html',
   styleUrls: ['./idv.component.css']

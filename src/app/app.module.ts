@@ -1,17 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ApplicationRef, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
+
+import { APP_IMPORTS } from './app.imports';
+
+
 import { AppComponent } from './app.component';
 import { IdvModule } from "./idv/idv.module";
 import { WelcomeModule } from './welcome/welcome.module';
-import { RouterModule } from '@angular/router';
-import { IdvComponent } from "./idv/idv.component";
-import { IDVRoutingModule } from './app-routing.module';
-//import { IdvResolver } from "./idv/idv-questions.resolver";
-//import { IdvQuestionsService } from "./idv/idv-questions.service";
-import { RouterOutletStub } from './app.router-stubs';
+import { IdvResolver } from "./idv/idv-questions.resolver";
+
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+
+
+//import { IDVRoutingModule } from './app-routing.module';
+//import { IdvQuestionsService } from "./idv/idv-questions.service";
+//import { RouterOutletStub } from './app.router-stubs';
 
 export function translateLoaderFactory(http: any) {
   return new TranslateStaticLoader(http, 'assets/i18n', '.json');
@@ -25,22 +30,19 @@ export function translateLoaderFactory(http: any) {
   // every component can belong to only one NgModule
   declarations: [
     AppComponent,
-    RouterOutletStub,
+    //RouterOutletStub
     //WelcomeComponent
   ],
   // list of the dependencies this modules has
   imports: [
+    APP_IMPORTS,
     BrowserModule,
     FormsModule,
     HttpModule,
+    
     IdvModule,
-    IDVRoutingModule,
     WelcomeModule,
-    //RouterModule.forRoot([      //forRoot method is a convention for modules that provide a singleton service
-    //  { path: '', component: IdvComponent , resolve: { questions: IdvResolver }},
-    //  { path: 'welcome', component: WelcomeComponent },
-    //  { path: '**', redirectTo: '', pathMatch: 'full'}
-    //  ]),
+    
     // the forRoot and the options should be always in this file app.module.ts
     TranslateModule.forRoot({
       provide: TranslateLoader,
@@ -53,10 +55,10 @@ export function translateLoaderFactory(http: any) {
   // If you forget to put your component in both declarations and exports(and then try to use it in another module via
   // imports, it won't work.
   exports: [],
-  // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  // schemas: [ 'CUSTOM_ELEMENTS_SCHEMA' ],
   // injectable objects that are available in the injector of this module, and therefore can be used
   // on the components of this module
-  providers: [/*IdvResolver, IdvQuestionsService*/],
+  providers: [IdvResolver /*IdvQuestionsService*/],
   // When we use this module to bootstrap an app, AppComponent should be bootstrapped
   bootstrap: [ AppComponent ]
 })
