@@ -1,5 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
+/** 
+ * This module is the entry for your App when NOT using universal.
+ * 
+ * Make sure to use the 3 constant APP_ imports so you don't have to keep
+ * track of your root app dependencies here. Only import directly in this file if
+ * there is something that is specific to the environment.  
+ */
+
 import { ApplicationRef, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 
@@ -9,9 +17,12 @@ import { APP_IMPORTS } from './app.imports';
 import { AppComponent } from './app.component';
 import { IdvModule } from "./idv/idv.module";
 import { WelcomeModule } from './welcome/welcome.module';
+import { RouterModule } from '@angular/router';
+import { IdvComponent } from "./idv/idv.component";
 import { IdvResolver } from "./idv/idv-questions.resolver";
-
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import { jmxResolver } from "./shared/jmx.resolver";
+import { IdvQuestionsService } from "./idv/idv-questions.service";
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate'; 
 
 
 //import { IDVRoutingModule } from './app-routing.module';
@@ -58,7 +69,7 @@ export function translateLoaderFactory(http: any) {
   // schemas: [ 'CUSTOM_ELEMENTS_SCHEMA' ],
   // injectable objects that are available in the injector of this module, and therefore can be used
   // on the components of this module
-  providers: [IdvResolver /*IdvQuestionsService*/],
+  providers: [IdvResolver, IdvQuestionsService, jmxResolver],
   // When we use this module to bootstrap an app, AppComponent should be bootstrapped
   bootstrap: [ AppComponent ]
 })

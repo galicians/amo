@@ -9,7 +9,7 @@ import {
   DEV_PORT, PROD_PORT, UNIVERSAL_PORT, EXCLUDE_SOURCE_MAPS, HOST,
   USE_DEV_SERVER_PROXY, DEV_SERVER_PROXY_CONFIG, DEV_SERVER_WATCH_OPTIONS,
   DEV_SOURCE_MAPS, PROD_SOURCE_MAPS, STORE_DEV_TOOLS,
-  MY_COPY_FOLDERS, MY_VENDOR_DLLS, MY_CLIENT_PLUGINS, MY_CLIENT_PRODUCTION_PLUGINS,
+  MY_COPY_FOLDERS, MY_POLYFILL_DLLS, MY_VENDOR_DLLS, MY_CLIENT_PLUGINS, MY_CLIENT_PRODUCTION_PLUGINS,
   MY_CLIENT_RULES, MY_SERVER_RULES, MY_SERVER_INCLUDE_CLIENT_PACKAGES
 } from './constants';
 
@@ -37,6 +37,7 @@ const EVENT = process.env.npm_lifecycle_event || '';
 const AOT = EVENT.includes('aot');
 const DEV_SERVER = EVENT.includes('webdev');
 const DLL = EVENT.includes('dll');
+const E2E = EVENT.includes('e2e');
 const HMR = hasProcessFlag('hot');
 const PROD = EVENT.includes('prod');
 const UNIVERSAL = EVENT.includes('universal');
@@ -99,6 +100,8 @@ const COPY_FOLDERS = [
   { from: 'src/assets', to: 'assets' },
   { from: 'node_modules/hammerjs/hammer.min.js' },
   { from: 'node_modules/hammerjs/hammer.min.js.map' },
+  { from: 'src/app/main.css' },
+  { from: 'src/app/styles.css' },
   ...MY_COPY_FOLDERS
 ];
 
@@ -192,13 +195,13 @@ const commonConfig = function webpackConfig(): WebpackConfig {
         threshold: 10240,
         minRatio: 0.8
       }),
-      
-      new BundleAnalyzerPlugin({
-        startAnalyzer: false
-      }),
       ...MY_CLIENT_PRODUCTION_PLUGINS,
-      
     );
+    if (!E2E) {
+      config.plugins.push(
+        //new BundleAnalyzerPlugin({analyzerPort: 5000})
+      );
+    }
   }
 
   return config;
@@ -230,7 +233,8 @@ const clientConfig = function webpackConfig(): WebpackConfig {
         'events',
         'webpack-dev-server/client/socket.js',
         'webpack/hot/emitter.js',
-        'zone.js/dist/long-stack-trace-zone.js'
+        'zone.js/dist/long-stack-trace-zone.js',
+        ...MY_POLYFILL_DLLS
       ],
       vendor: [...DLL_VENDORS]
     };

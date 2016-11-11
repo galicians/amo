@@ -19,6 +19,8 @@ import { AppComponent } from './app.component';
 import { IdvModule } from "./idv/idv.module";
 import { WelcomeModule } from './welcome/welcome.module';
 import { IdvResolver } from "./idv/idv-questions.resolver";
+import { IdvQuestionsService } from "./idv/idv-questions.service";
+import { jmxResolver } from "./shared/jmx.resolver";
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
@@ -51,7 +53,7 @@ export function translateLoaderFactory(http: any) {
 
   ],
   bootstrap: [AppComponent],
-  providers: [IdvResolver]
+  providers: [IdvResolver, IdvQuestionsService, jmxResolver]
 })
 export class AppModule { }
 

@@ -11,13 +11,19 @@ import 'rxjs/add/operator/catch';
 // to make this service available to DI we need to add the @Injectable annotation
 @Injectable()
 export class IdvQuestionsService {
-  public baseUrl: string = 'https://1stcreditv5-dev.telrock.com/telrock-tas-war/rest/';
+  public baseUrl: string = 'https://1stcredit-uat.telrock.com/telrock-tas-war/rest/';
   public body: any;
   // public body: string|Array<IdvAnswer>; why this fails;
 
 
   constructor(private http: Http) { }
 
+  public getJMXproperties(): Observable<Response> {
+    return this.http.get(this.baseUrl + 'properties', this.getRequestOptions())
+      .map((res: Response) => {
+        return (<any>res.json().data)
+      })
+  }
 
   public postIdvQuestions(answers) {
     this.body = [];

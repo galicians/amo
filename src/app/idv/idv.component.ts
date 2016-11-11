@@ -4,56 +4,82 @@ import { IdvQuestion } from './idv-question.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 import {TranslateService} from 'ng2-translate';
+import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+
 
 @Component({
-  moduleId: module.id,
   selector: 'app-idv',
   templateUrl: './idv.component.html',
   styleUrls: ['./idv.component.css']
 })
+
 export class IdvComponent implements OnInit {
-
-  ngOnInit() {
-    
-  }
-
   idvQuestions: Array<IdvQuestion>;
- 
+  myForm: FormGroup;
+  controls: any = {};
+  controlsArray: any = []; // same that formControlItem
+  formControlItem: any;  // formControlItem: AbstractControl; in the moment we add the property name, we need to create a different interface for AbstractControl, extending the interface with the property 'name'
+  validators: Array<any>;
+  error: boolean = false;
+  errorMsg: string;
+  dateFormat: string;
+  locale: string;
+  loginDate: any;
+
   
-  submitIdvResponses( idvquestions: any): void {
-    this.idvQuestionsService.postIdvQuestions(idvquestions).subscribe(
+  submitIdvResponses(a: any): void {
+
+    this.controlsArray.map( formInput => {
+      this.idvQuestions.map( question => {
+        if(formInput.name == question.name) question.answer = formInput.answer
+      })
+    })
+    this.idvQuestionsService.postIdvQuestions(this.idvQuestions).subscribe(
       data => this.router.navigate(['/welcome']),
-      error => console.log('error'),
-      () => console.log('login done')
+      error => {
+        this.error = true;
+        this.errorMsg = JSON.parse(error['_body']).errors[0].key
+      },
+      () => console.log('Login successful')
     );
-  } 
+  }
   
-
-
-  constructor(private idvQuestionsService: IdvQuestionsService, private route: ActivatedRoute, private router: Router, translate: TranslateService)
-    {
-
+  constructor(private idvQuestionsService: IdvQuestionsService, private route: ActivatedRoute, private router: Router, translate: TranslateService) {
       route.data
         .subscribe(
-          data => this.idvQuestions = data['questions']
+          data => {
+            console.log('route.data', data);
+            this.idvQuestions = data['questions'];
+            this.locale = JSON.parse(data['properties']['ui.locale']);
+            this.loginDate = JSON.parse(data['properties']['ui.loginDate'])['display'];
+          }
         )
-      translate.setDefaultLang('en');
-      translate.use('en');
-    }
+      translate.setDefaultLang(this.locale);
+      translate.use(this.locale);
+      
+      this.idvQuestions.map(question  => {
+        this.validators = [Validators.required]
+        if(question.dataType == 'DATE') this.validators.push(this.validateDate)
+        this.formControlItem = new FormControl('', this.validators)
+        this.formControlItem.name = question.name
+        this.controlsArray.push(this.formControlItem)
+      })
+  }
 
+  validateDate = (date) => {
+      let regEx;
+      if(this.locale == "en-gb")  regEx = new RegExp(/^(0[1-9]|1\d|2\d|3[01])[\/\-](0[1-9]|1[0-2])[\/\-](19|10)\d{2}/)
+      if(this.locale == "en")  regEx = new RegExp(/^(0[1-9]|1[0-2])[\/\-](0[1-9]|1\d|2\d|3[01])[\/\-](19|10)\d{2}/)
+      if (!date) return null
+      return regEx.test(date.value) ? null : { validDate: true }
+  }
 
-  //ngOnInit() {
-
-    // if you don't subscribe to this method, the http call won't take place
-    // this.idvQuestionsService.getIdvQuestions().subscribe((res : IdvQuestion[]) => {
-
-    // this.idvQuestionsService.getIdvQuestions().subscribe((res : Array<IdvQuestion>) => {
-    //   this.idvQuestions = res;
-    //   })
-
-  //};
-
+  ngOnInit() {
+    this.formControlItem.valueChanges.subscribe(
+        (value: string) =>{
+          console.log(this.formControlItem.name, ' has changed')
+    });
+  }
 
 }
-
 
