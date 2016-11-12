@@ -1,4 +1,4 @@
-import {IdvQuestion} from './idv-question.model';
+import { IdvQuestion } from './idv-question.model';
 
 export class IdvAnswer {
   public answer: string;

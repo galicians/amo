@@ -6,10 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { By } from '@angular/platform-browser';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
-import { IdvQuestionsService} from './idv-questions.service';
+import { IdvQuestionsService } from './idv-questions.service';
 import { IdvQuestion } from './idv-question.model';
 // import { IdvQuestionsStub } from './idv-question-stubs';
 
@@ -28,16 +28,16 @@ let idvQuestions;
 
 
 class RouterStub {
+    public baseUrl: string;
     navigateByUrl(url: string) { return url; }
-    baseUrl: string;
 }
 
-//class ActivatedRouteStub {}
+// class ActivatedRouteStub {}
 
 class IdvQuestionsServiceStub {}
 
 describe('Component: Idv', () => {
-    
+
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [FormsModule],
@@ -66,7 +66,7 @@ describe('Component: Idv', () => {
             questions.complete();
         });
         
-        //route.data = idvQuestions;
+        // route.data = idvQuestions;
 
         console.log(route);
         expect(comp).toBeDefined(); 

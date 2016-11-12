@@ -3,12 +3,13 @@
  */
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // to use ngFor need to import BrowserModule, TO DO: try CommonModule
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// to use ngFor need to import BrowserModule, 
+// TO DO: try CommonModule
 import { BrowserModule } from '@angular/platform-browser';
 import { IdvComponent } from './idv.component';
 import  { IdvQuestionsService } from './idv-questions.service';
-import { TranslateModule } from "ng2-translate";
-
+import { TranslateModule } from 'ng2-translate';
 
 @NgModule({
   imports: [
@@ -21,8 +22,8 @@ import { TranslateModule } from "ng2-translate";
   declarations: [
     IdvComponent
   ],
-  exports: [IdvComponent,TranslateModule],
-  providers: [IdvQuestionsService]
+  exports: [ IdvComponent, TranslateModule ],
+  providers: [ IdvQuestionsService ]
 })
 
 export class IdvModule {}

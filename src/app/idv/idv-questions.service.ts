@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
-import { Http, Response, Headers, RequestOptions} from '@angular/http';
+import { Observable } from 'rxjs';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { IdvQuestion } from './idv-question.model';
 import { IdvAnswer } from './idv-answer.model';
 
@@ -21,8 +21,8 @@ export class IdvQuestionsService {
   public getJMXproperties(): Observable<Response> {
     return this.http.get(this.baseUrl + 'properties', this.getRequestOptions())
       .map((res: Response) => {
-        return (<any>res.json().data)
-      })
+        return (<any>res.json().data);
+      });
   }
 
   public postIdvQuestions(answers) {

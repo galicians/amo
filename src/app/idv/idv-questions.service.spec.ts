@@ -26,19 +26,17 @@ describe('Service: IdvQuestions', () => {
     it('should be defined',
         async(inject([IdvQuestionsService], (service: IdvQuestionsService) => {
             expect(service).toBeDefined();
-            
         }))
     );
 
     it('should get the questions from server',
         async(inject([IdvQuestionsService], (service: IdvQuestionsService) => {
-            
-            service.getIdvQuestions().subscribe( 
+            service.getIdvQuestions().subscribe(
                 value => {
                     let obj1 = value[0];
                     let answer1 = obj1;
 
-                    expect(answer1['sequence']).toBe(1); 
+                    expect(answer1['sequence']).toBe(1);
                 },
                 error => {
                     console.log('error::: ', error);
@@ -49,9 +47,8 @@ describe('Service: IdvQuestions', () => {
 
     it('should send answers to the sever, and return 200',
         async(inject([IdvQuestionsService], (service: IdvQuestionsService) => {
-            
-                let answers = [
-                    {
+            let answers = [
+                {
                         sequence: 1, name: 'idv.question.account.number',
                         id: 7, description: 'Please enter your 1st Credit Reference',
                         field: 'customerAccountVO.accountNumber',
@@ -74,7 +71,7 @@ describe('Service: IdvQuestions', () => {
                     }
                 ];
 
-                service.postIdvQuestions(answers).subscribe( 
+                service.postIdvQuestions(answers).subscribe(
                     value => {
                         expect(value.status).toEqual(200);
                     },
@@ -82,7 +79,6 @@ describe('Service: IdvQuestions', () => {
                         console.log('error::: ', error);
                     }
                 );
-            
         }))
     );
 });

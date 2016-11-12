@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-root',
   template: '<router-outlet></router-outlet>',
   styles: [`.basic {
-  	background: red;
+    background: red;
   }`],
 
 })
@@ -14,8 +14,8 @@ export class AppComponent {
   constructor(
     public route: ActivatedRoute,
     public router: Router
-  ) { 
-  		console.log( 'APPCOMPONENT CREATED!' );
+  ) {
+      console.log( 'APPCOMPONENT CREATED!' );
   }
 }
 

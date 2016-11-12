@@ -6,7 +6,7 @@
  * there is something that is specific to the environment.  
  */
 
-import { ApplicationRef, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
@@ -15,19 +15,19 @@ import { APP_IMPORTS } from './app.imports';
 
 
 import { AppComponent } from './app.component';
-import { IdvModule } from "./idv/idv.module";
+import { IdvModule } from './idv/idv.module';
 import { WelcomeModule } from './welcome/welcome.module';
-import { RouterModule } from '@angular/router';
-import { IdvComponent } from "./idv/idv.component";
-import { IdvResolver } from "./idv/idv-questions.resolver";
-import { jmxResolver } from "./shared/jmx.resolver";
-import { IdvQuestionsService } from "./idv/idv-questions.service";
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate'; 
 
 
-//import { IDVRoutingModule } from './app-routing.module';
-//import { IdvQuestionsService } from "./idv/idv-questions.service";
-//import { RouterOutletStub } from './app.router-stubs';
+import { IdvResolver } from './idv/idv-questions.resolver';
+import { JmxResolver } from './shared/jmx.resolver';
+import { IdvQuestionsService } from './idv/idv-questions.service';
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+
+
+// import { IDVRoutingModule } from './app-routing.module';
+// import { IdvQuestionsService } from "./idv/idv-questions.service";
+// import { RouterOutletStub } from './app.router-stubs';
 
 export function translateLoaderFactory(http: any) {
   return new TranslateStaticLoader(http, 'assets/i18n', '.json');
@@ -41,8 +41,8 @@ export function translateLoaderFactory(http: any) {
   // every component can belong to only one NgModule
   declarations: [
     AppComponent,
-    //RouterOutletStub
-    //WelcomeComponent
+    // RouterOutletStub
+    // WelcomeComponent
   ],
   // list of the dependencies this modules has
   imports: [
@@ -50,26 +50,27 @@ export function translateLoaderFactory(http: any) {
     BrowserModule,
     FormsModule,
     HttpModule,
-    
+
     IdvModule,
     WelcomeModule,
-    
+
     // the forRoot and the options should be always in this file app.module.ts
     TranslateModule.forRoot({
       provide: TranslateLoader,
-      //useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+      // useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
       useFactory: translateLoaderFactory,
       deps: [Http]
     })
   ],
   // Exports is the list of public components for this NgModule
-  // If you forget to put your component in both declarations and exports(and then try to use it in another module via
+  // If you forget to put your component in both declarations and 
+  // exports(and then try to use it in another module via
   // imports, it won't work.
   exports: [],
   // schemas: [ 'CUSTOM_ELEMENTS_SCHEMA' ],
   // injectable objects that are available in the injector of this module, and therefore can be used
   // on the components of this module
-  providers: [IdvResolver, IdvQuestionsService, jmxResolver],
+  providers: [IdvResolver, IdvQuestionsService, JmxResolver],
   // When we use this module to bootstrap an app, AppComponent should be bootstrapped
   bootstrap: [ AppComponent ]
 })

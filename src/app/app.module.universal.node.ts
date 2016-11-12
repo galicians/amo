@@ -9,21 +9,21 @@
 import { NgModule } from '@angular/core';
 import { UniversalModule } from 'angular2-universal';
 
-import { HttpModule, Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-//import { APP_DECLARATIONS } from './app.declarations';
+// import { APP_DECLARATIONS } from './app.declarations';
 import { APP_IMPORTS } from './app.imports';
-//import { APP_PROVIDERS } from './app.providers';
+// import { APP_PROVIDERS } from './app.providers';
 
 import { AppComponent } from './app.component';
-import { IdvModule } from "./idv/idv.module";
+import { IdvModule } from './idv/idv.module';
 import { WelcomeModule } from './welcome/welcome.module';
-import { IdvResolver } from "./idv/idv-questions.resolver";
-//import { IdvQuestionsService } from "./idv/idv-questions.service";
-import { jmxResolver } from "./shared/jmx.resolver";
+import { IdvResolver } from './idv/idv-questions.resolver';
+// import { IdvQuestionsService } from "./idv/idv-questions.service";
+import { JmxResolver } from './shared/jmx.resolver';
 
-//import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+// import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
 
 // export function translateLoaderFactory(http: any) {
@@ -34,7 +34,7 @@ import { jmxResolver } from "./shared/jmx.resolver";
 @NgModule({
   declarations: [
     AppComponent,
-    //APP_DECLARATIONS
+    // APP_DECLARATIONS
   ],
   imports: [
     APP_IMPORTS,
@@ -53,9 +53,9 @@ import { jmxResolver } from "./shared/jmx.resolver";
     // })
   ],
   bootstrap: [AppComponent],
-  providers: [IdvResolver, /*IdvQuestionsService,*/ jmxResolver]
+  providers: [IdvResolver, /*IdvQuestionsService,*/ JmxResolver]
 })
-export class AppModule { 
+export class AppModule {
   constructor() {
     console.log('NODE APPMODULE CREATED!');
   }

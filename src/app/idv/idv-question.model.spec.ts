@@ -2,7 +2,7 @@
 
 import { ComponentFixture, TestBed, async, inject } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
-import {IdvQuestion} from './idv-question.model';
+import { IdvQuestion } from './idv-question.model';
 
 let testQuestion;
 

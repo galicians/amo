@@ -6,21 +6,21 @@
  * there is something that is specific to the environment.  
  */
 
-import { ApplicationRef, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { UniversalModule } from 'angular2-universal';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 
 import { APP_IMPORTS } from './app.imports';
-//import { APP_PROVIDERS } from './app.providers';
-//import { APP_DECLARATIONS } from './app.declarations';
+// import { APP_PROVIDERS } from './app.providers';
+// import { APP_DECLARATIONS } from './app.declarations';
 
 import { AppComponent } from './app.component';
-import { IdvModule } from "./idv/idv.module";
+import { IdvModule } from './idv/idv.module';
 import { WelcomeModule } from './welcome/welcome.module';
-import { IdvResolver } from "./idv/idv-questions.resolver";
-import { IdvQuestionsService } from "./idv/idv-questions.service";
-import { jmxResolver } from "./shared/jmx.resolver";
+import { IdvResolver } from './idv/idv-questions.resolver';
+import { IdvQuestionsService } from './idv/idv-questions.service';
+import { JmxResolver } from './shared/jmx.resolver';
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
@@ -32,30 +32,30 @@ export function translateLoaderFactory(http: any) {
 @NgModule({
   declarations: [
     AppComponent,
-    //RouterOutletStub,
-    //APP_DECLARATIONS
+    // RouterOutletStub,
+    // APP_DECLARATIONS
   ],
   imports: [
     APP_IMPORTS,
     UniversalModule, // NodeModule, NodeHttpModule, and NodeJsonpModule are included
     FormsModule,
     HttpModule,
-    
+
     IdvModule,
     WelcomeModule,
 
     TranslateModule.forRoot({
       provide: TranslateLoader,
-      //useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+      // useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
       useFactory: translateLoaderFactory,
       deps: [Http]
     })
 
   ],
   bootstrap: [AppComponent],
-  providers: [IdvResolver, IdvQuestionsService, jmxResolver]
+  providers: [IdvResolver, IdvQuestionsService, JmxResolver]
 })
-export class AppModule { 
+export class AppModule {
     constructor() {
       console.log('BROWSER APPMODULE CREATED!');
     }
