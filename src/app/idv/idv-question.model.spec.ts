@@ -5,14 +5,24 @@ import { DebugElement } from '@angular/core';
 import { IdvQuestion } from './idv-question.model';
 
 let testQuestion;
+let testObject: any;
 
 describe('IdvQuestion: Model', () => {
 
-    it('should create an instance', () => {
-        expect(testQuestion).not.toBeDefined();
+    testObject = {
+        name: 'TestObject',
+        answer: null
+    };
 
-        testQuestion = new IdvQuestion( {} );
+    testQuestion = new IdvQuestion( testObject );
+
+    it('should create an instance', () => {
         expect(testQuestion).toBeDefined();
+    });
+
+    it('should have a name field and null answer', () => {
+        expect(testQuestion.name).toContain('TestObject');
+        expect(testQuestion.answer).toBe(null);
     });
 
 });

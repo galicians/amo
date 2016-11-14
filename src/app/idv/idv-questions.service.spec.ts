@@ -39,7 +39,7 @@ describe('Service: IdvQuestions', () => {
                     expect(answer1['sequence']).toBe(1);
                 },
                 error => {
-                    console.log('error::: ', error);
+                    console.log('error::: getIdvQuestions: ', error);
                 }
             );
         }))
@@ -76,7 +76,7 @@ describe('Service: IdvQuestions', () => {
                         expect(value.status).toEqual(200);
                     },
                     error => {
-                        console.log('error::: ', error);
+                        console.log('error::: postIdvQuestions: ', error);
                     }
                 );
         }))
