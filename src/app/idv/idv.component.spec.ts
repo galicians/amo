@@ -65,11 +65,11 @@ describe('Component: Idv', () => {
                 { provide: Router, useClass: RouterStub },
                 // { provide: TranslateService }
             ]
-        })
+        });
         // .compileComponents();
 
-        fixture = TestBed.createComponent( IdvComponent );
-        //comp = fixture.componentInstance;
+        // fixture = TestBed.createComponent( IdvComponent );
+        // comp = fixture.componentInstance;
     }));
 
     console.log('TESTBED::::');

@@ -31,7 +31,6 @@ export class IdvComponent implements OnInit {
 
 
   submitIdvResponses(a: any): void {
-    
     this.controlsArray.map( formInput => {
       this.idvQuestions.map( question => {
         if ( formInput.name === question.name ) question.answer = formInput.answer;
