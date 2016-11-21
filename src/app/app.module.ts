@@ -17,6 +17,7 @@ import { APP_IMPORTS } from './app.imports';
 import { AppComponent } from './app.component';
 import { IdvModule } from './idv/idv.module';
 import { WelcomeModule } from './welcome/welcome.module';
+import { PortalModule } from '../portal/portal.module';
 
 
 import { IdvResolver } from './idv/idv-questions.resolver';
@@ -53,6 +54,7 @@ export function translateLoaderFactory(http: any) {
 
     IdvModule,
     WelcomeModule,
+    PortalModule,
 
     // the forRoot and the options should be always in this file app.module.ts
     TranslateModule.forRoot({
