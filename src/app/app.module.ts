@@ -11,12 +11,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 
-import { APP_IMPORTS } from './app.imports';
+//import { APP_IMPORTS } from './app.imports';
 
 
 import { AppComponent } from './app.component';
 import { IdvModule } from './idv/idv.module';
 import { WelcomeModule } from './welcome/welcome.module';
+import { AppRoutingModule } from './app.routing.module';
 
 
 import { IdvResolver } from './idv/idv-questions.resolver';
@@ -46,13 +47,14 @@ export function translateLoaderFactory(http: any) {
   ],
   // list of the dependencies this modules has
   imports: [
-    APP_IMPORTS,
+    //APP_IMPORTS,
     BrowserModule,
     FormsModule,
     HttpModule,
 
     IdvModule,
     WelcomeModule,
+    AppRoutingModule,
 
     // the forRoot and the options should be always in this file app.module.ts
     TranslateModule.forRoot({

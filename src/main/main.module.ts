@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MaterialModule } from '@angular/material';
 
-//import { SharedModules } from '../shared/shared.module';
+import { SharedModules } from '../shared/shared.module';
 import { MainRoutingModule } from './main.routing.module';
 import { AppModule } from '../app/app.module';
 import { PortalModule } from '../portal/portal.module';
@@ -12,7 +11,7 @@ import { MainComponent } from './main.component';
 	declarations: [ MainComponent ],
 	imports: [ BrowserModule, MainRoutingModule, 
 				AppModule, PortalModule, 
-				MaterialModule.forRoot() ],
+				SharedModules ],
 	bootstrap: [ MainComponent ]
 })
 export class MainModule {}

@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 	selector: 'portal-auth',
 	//template: 'THIS is the PORTAL AUTH COMP TEST',
 	templateUrl: './portal.auth.component.html',
-	styleUrls: []
+	styleUrls: [ './portal.auth.component.css' ]
 })
 export class PortalAuthComponent {}

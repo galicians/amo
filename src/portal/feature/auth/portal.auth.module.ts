@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { MaterialModule } from '@angular/material';
+import { SharedModules } from '../../../shared/shared.module';
 
 import { PortalAuthComponent } from './portal.auth.component';
 
 @NgModule({
 	declarations: [ PortalAuthComponent ],
 	imports: [
-		MaterialModule.forRoot()
+		SharedModules
 	]
 })
 export class PortalAuthModule {}
