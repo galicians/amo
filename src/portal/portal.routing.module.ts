@@ -7,11 +7,14 @@ import { PortalDashboardComponent } from './feature/dashboard/portal.dashboard.c
 
 
 const portalRoutes: Routes = [
-	{ path: 'portal', component: PortalComponent, children: [
+	{ path: 'portal', 
+	component: PortalComponent, 
+	children: [
 		{ path: 'auth', component: PortalAuthComponent },
 		{ path: 'dashboard', component: PortalDashboardComponent }
 	]},
 	{ path: '**', redirectTo: 'portal', pathMatch: 'prefix'}
+	
 ];
 
 @NgModule({

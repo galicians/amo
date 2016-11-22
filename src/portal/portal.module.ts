@@ -9,7 +9,8 @@ import { PortalRoutingModule } from './portal.routing.module';
 @NgModule({
 	declarations: [ PortalComponent ],
 	imports: [
-		PortalRoutingModule, PortalAuthModule, PortalDashboardModule
+		PortalRoutingModule, PortalAuthModule, 
+		PortalDashboardModule
 	]
 })
 export class PortalModule {}

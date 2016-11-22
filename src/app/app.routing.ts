@@ -13,9 +13,8 @@ export const appRoutes: Routes = [
 		component: AppComponent,
 		children: [
 			{ path: '', component: IdvComponent , resolve: { questions: IdvResolver, properties: JmxResolver }},
-			{ path: 'welcome', component: WelcomeComponent }
+			{ path: 'welcome', component: WelcomeComponent },
+			//{ path: '**', redirectTo: 'app', pathMatch: 'prefix'}
 		]
-	},
-	{ path: '**', redirectTo: 'app', pathMatch: 'prefix'}
-
+	}
 ];
