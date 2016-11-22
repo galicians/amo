@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-comp',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

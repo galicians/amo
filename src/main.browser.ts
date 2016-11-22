@@ -4,8 +4,10 @@ import './rxjs.imports';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { bootloader } from '@angularclass/hmr';
-import { AppModule } from './app/app.module';
+//import { AppModule } from './app/app.module';
 import { decorateModuleRef } from './environment';
+
+import { MainModule } from './main/main.module';
 
 if ('production' === ENV) {
   enableProdMode();
@@ -13,9 +15,9 @@ if ('production' === ENV) {
 
 export function main(): Promise<any> {
   return platformBrowserDynamic()
-    .bootstrapModule(AppModule)
+    .bootstrapModule(MainModule)
     .then(decorateModuleRef)
-    .catch(err => console.error(err));
+    .catch(err => console.error('Bootstrapping error', err));
 }
 
 // needed for hmr
