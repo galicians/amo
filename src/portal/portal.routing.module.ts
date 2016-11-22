@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { PortalComponent } from './portal.component';
 import { PortalAuthComponent } from './feature/auth/portal.auth.component';
 import { PortalDashboardComponent } from './feature/dashboard/portal.dashboard.component';
 
 
 const portalRoutes: Routes = [
-	{ path: 'auth', component: PortalAuthComponent },
-	{ path: 'dashboard', component: PortalDashboardComponent }
+	{ path: 'portal', component: PortalComponent, children: [
+		{ path: 'auth', component: PortalAuthComponent },
+		{ path: 'dashboard', component: PortalDashboardComponent }
+	]},
+	{ path: '**', redirectTo: 'portal', pathMatch: 'prefix'}
 ];
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(portalRoutes)
+		RouterModule.forChild(portalRoutes)
 	],
 	exports: [ RouterModule ]
 })
