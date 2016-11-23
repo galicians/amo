@@ -75,7 +75,19 @@ exports.MY_CLIENT_PLUGINS = [
   // use this to import your own webpack config Client plugins.
   new SWPrecacheWebpackPlugin ({
     cacheId: 'webpack-site-cache',
-    filename: 'service-worker.js'
+    filename: './dist/client/service-worker.js',
+    handleFetch: true,
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/idv\/process/,
+        handler: 'fastest'
+      },
+      {
+        urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/properties/,
+        handler: 'fastest'
+      }
+    ]
+
   })
 
 ]

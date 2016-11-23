@@ -13,7 +13,7 @@ const portalRoutes: Routes = [
 		{ path: 'auth', component: PortalAuthComponent },
 		{ path: 'dashboard', component: PortalDashboardComponent }
 	]},
-	{ path: '**', redirectTo: 'portal', pathMatch: 'prefix'}
+	//{ path: '**', redirectTo: 'portal', pathMatch: 'prefix'}
 	
 ];
 

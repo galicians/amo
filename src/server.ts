@@ -43,7 +43,7 @@ function ngApp(req, res) {
     req,
     res,
     ngModule: AppModule,
-    preboot: { appRoot: 'app-root'},
+    preboot: { appRoot: 'main-root'},
     baseUrl: '/',
     requestUrl: req.originalUrl,
     originUrl: req.hostname
