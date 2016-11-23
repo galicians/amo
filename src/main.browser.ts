@@ -8,6 +8,7 @@ import { bootloader } from '@angularclass/hmr';
 import { decorateModuleRef } from './environment';
 
 import { MainModule } from './main/main.module';
+import { ServiceWorkActivate } from './service-work-active';
 
 if ('production' === ENV) {
   enableProdMode();
@@ -23,3 +24,5 @@ export function main(): Promise<any> {
 // needed for hmr
 // in prod this is replace for document ready
 bootloader(main);
+
+new ServiceWorkActivate();

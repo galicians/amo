@@ -2,6 +2,9 @@
 const root = require('./helpers.js').root
 const ip = require('ip');
 
+const path = require('path');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+
 exports.HOST = ip.address();
 exports.DEV_PORT = 3000;
 exports.E2E_PORT = 4201;
@@ -70,6 +73,11 @@ exports.MY_VENDOR_DLLS = [
 
 exports.MY_CLIENT_PLUGINS = [
   // use this to import your own webpack config Client plugins.
+  new SWPrecacheWebpackPlugin ({
+    cacheId: 'webpack-site-cache',
+    filename: 'service-worker.js'
+  })
+
 ]
 
 exports.MY_CLIENT_PRODUCTION_PLUGINS = [
