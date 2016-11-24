@@ -57,8 +57,8 @@ export class IdvComponent implements OnInit {
           data => {
             console.log('route.data', data);
             this.idvQuestions = data['questions'];
-            this.locale = JSON.parse(data['properties']['ui.locale']);
-            this.loginDate = JSON.parse(data['properties']['ui.loginDate'])['display'];
+            this.locale = data['properties']['ui.locale'] ;
+            this.loginDate = data['properties']['ui.loginDate'] ;
           }
         );
       translate.setDefaultLang(this.locale);

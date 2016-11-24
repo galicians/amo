@@ -13,9 +13,8 @@ export class JmxResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot,
           state: RouterStateSnapshot): Observable<any> {
-
+  	console.log('RESOLVING JMX');
     return this.idvQuestionsService.getJMXproperties();
-
   }
 
 }

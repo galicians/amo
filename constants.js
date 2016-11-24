@@ -5,6 +5,10 @@ const ip = require('ip');
 const path = require('path');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
+const IS_LOCAL = true;
+const domain = (IS_LOCAL == true ? 'localhost:8443' : '1stcreditv5-dev\.telrock\.com\/telrock-tas-war')
+exports.BASE_DOMAIN = domain;
+
 exports.HOST = ip.address();
 exports.DEV_PORT = 3000;
 exports.E2E_PORT = 4201;
@@ -75,15 +79,17 @@ exports.MY_CLIENT_PLUGINS = [
   // use this to import your own webpack config Client plugins.
   new SWPrecacheWebpackPlugin ({
     cacheId: 'webpack-site-cache',
-    filename: './dist/client/service-worker.js',
+    filename: 'service-worker.js',
     handleFetch: true,
     runtimeCaching: [
       {
-        urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/idv\/process/,
+        urlPattern: /^https:\/\/localhost:8443\/rest\/properties/,
+        // urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/properties/,
         handler: 'fastest'
       },
       {
-        urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/properties/,
+        urlPattern: /^https:\/\/localhost:8443\/rest\/idv\/process/,
+        // urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/idv\/process/,
         handler: 'fastest'
       }
     ]

@@ -9,7 +9,7 @@ export class ServiceWorkActivate {
     let isAvailable: Boolean;
 
     if ( 'serviceWorker' in navigator ) {
-      navigator.serviceWorker.register('./service-worker.js')
+      navigator.serviceWorker.register('/service-worker.js')
       .then( (registration) => {
         console.log( 'ServiceWorker registration successful', registration.scope );
       })
