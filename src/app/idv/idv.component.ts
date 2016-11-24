@@ -38,7 +38,7 @@ export class IdvComponent implements OnInit {
       });
     });
     this.idvQuestionsService.postIdvQuestions(this.idvQuestions).subscribe(
-      data => this.router.navigate(['/welcome']),
+      data => this.router.navigate(['/app/welcome']),
       error => {
         this.error = true;
         this.errorMsg = JSON.parse(error['_body']).errors[0].key;

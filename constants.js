@@ -80,8 +80,22 @@ exports.MY_CLIENT_PLUGINS = [
   new SWPrecacheWebpackPlugin ({
     cacheId: 'webpack-site-cache',
     filename: 'service-worker.js',
+    staticFileGlobs: [
+    ],
     handleFetch: true,
     runtimeCaching: [
+      { 
+        urlPattern: /^https:\/\/maxcdn\.bootstrapcdn\.com\/bootstrap\/3\.3\.7\/css\/bootstrap\.min\.css/,
+        handler: 'fastest'
+      },
+      {
+        urlPattern: /^http:\/\/fonts\.googleapis\.com\/css\?family=Roboto/,
+        handler: 'fastest'
+      },
+      {
+        urlPattern: /^https:\/\/fonts\.googleapis\.com\/icon\?family=Material\+Icons/,
+        handler: 'fastest'
+      },
       {
         urlPattern: /^https:\/\/localhost:8443\/rest\/properties/,
         // urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/properties/,
