@@ -40,7 +40,7 @@ export class PortalAuthComponent {
 			}
 		});
 		this.user = '';
-		console.log('IN:', this.users, this._store);
+		console.log('IN:', this.users, this.subscription);
 	}
 
 	userLoggedOut() {
@@ -51,7 +51,7 @@ export class PortalAuthComponent {
 				isLoggedIn: false
 			}
 		});
-		console.log('OUT:', this.users, this._store);
+		console.log('OUT:', this.users, this.subscription);
 	}
 
 	ngOnDestroy(){
