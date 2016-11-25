@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 	styleUrls: [ './portal.component.css' ]
 })
 export class PortalComponent {
+
+	
 }

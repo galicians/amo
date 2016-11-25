@@ -5,9 +5,11 @@
 		<md-input  placeholder="Password required" maxlength="100" type="password" name="portal-user-password"></md-input>
 		<button md-raised-button color="primary">Login</button>
 	</form>
-	<button md-raised-button color="primary" (click)='userLoggingIn()' >Add</button>
+
+	<button md-raised-button color="primary" (click)="userLoggedIn( user )" >login</button>
 	<div>Current User: {{ user }}</div>
 	<div>User List: {{ users }}</div>
-	<button md-raised-button color="primary" (click)='userLoggingOut()' >Del</button>
+	<button md-raised-button color="primary" (click)="userLoggedOut()" >logout</button>
+	
 </div>
 

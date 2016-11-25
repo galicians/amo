@@ -13,7 +13,7 @@ const appRoutes: Routes = [
 		component: AppComponent,
 		children: [
 			{ path: 'idv', component: IdvComponent , resolve: { questions: IdvResolver, properties: JmxResolver }},
-			{ path: 'welcome', component: WelcomeComponent },
+			{ path: 'welcome', component: WelcomeComponent, resolve: { properties: JmxResolver }},
 			//{ path: '', redirectTo: '/idv', pathMatch: 'full'}
 		]
 	}

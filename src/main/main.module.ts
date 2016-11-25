@@ -8,14 +8,14 @@ import { AppModule } from '../app/app.module';
 import { PortalModule } from '../portal/portal.module';
 import { MainComponent } from './main.component';
 
-import { portalUserReducer } from '../portal/portal.user.reducer';
+import { portalUsers } from '../portal/portal.user.reducer';
 
 @NgModule({
 	declarations: [ MainComponent ],
 	imports: [ BrowserModule, MainRoutingModule, 
 				AppModule, PortalModule, 
 				SharedModules,
-				StoreModule.provideStore({ users: portalUserReducer }) ],
+				StoreModule.provideStore({ portalUsers }) ],
 	bootstrap: [ MainComponent ]
 })
 export class MainModule {}

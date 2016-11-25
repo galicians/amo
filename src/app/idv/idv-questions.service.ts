@@ -77,7 +77,7 @@ export class IdvQuestionsService {
   private getRequestOptions() {
     let options = new RequestOptions({
       headers: this.getHeaders(),
-      withCredentials: true
+      withCredentials: false  //true  set to false for local dev
     });
     return options;
   }
