@@ -58,6 +58,7 @@ export class IdvComponent implements OnInit {
             console.log('route.data', data);
             this.idvQuestions = data['questions'];
             this.locale = data['properties']['ui.locale'] ;
+            this.locale = this.locale.substr(1,5);
             this.loginDate = data['properties']['ui.loginDate'] ;
           }
         );
@@ -66,7 +67,7 @@ export class IdvComponent implements OnInit {
 
       this.idvQuestions.map(question  => {
         this.validators = [Validators.required];
-        if ( question.dataType === 'DATE' ) this.validators.push( this.validateDate );
+        if ( question.dataType === 'DATE' ) this.validators.push( this.validateDate ); 
         this.formControlItem = new FormControl('', this.validators);
         this.formControlItem.name = question.name;
         this.controlsArray.push(this.formControlItem);
@@ -83,7 +84,7 @@ export class IdvComponent implements OnInit {
         regEx = new RegExp(
           /^(0[1-9]|1[0-2])[\/\-](0[1-9]|1\d|2\d|3[01])[\/\-](19|10)\d{2}/
          );
-      if ( !date ) return null;
+      if ( !date.value ) return null;
       return regEx.test(date.value) ? null : { validDate: true };
   }
 

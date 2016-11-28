@@ -20,7 +20,8 @@ export class WelcomeComponent implements OnInit {
         .subscribe(
           data => {
             console.log('route.data', data);
-            this.locale = data['properties']['ui.locale']
+            this.locale = data['properties']['ui.locale'];
+            this.locale = this.locale.substr(1,5);
           }
         );
 

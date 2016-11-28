@@ -8,12 +8,10 @@ import { IdvQuestionsService } from './../idv/idv-questions.service';
 export class JmxResolver implements Resolve<any> {
 
   constructor(private idvQuestionsService: IdvQuestionsService) {
-    console.log('JMX RESOLVER');
   }
 
   resolve(route: ActivatedRouteSnapshot,
           state: RouterStateSnapshot): Observable<any> {
-  	console.log('RESOLVING JMX');
     return this.idvQuestionsService.getJMXproperties();
   }
 

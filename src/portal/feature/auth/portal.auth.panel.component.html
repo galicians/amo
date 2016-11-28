@@ -1,0 +1,18 @@
+<div class="form-container" layout="column">
+	<h1>TELROCK Admin Portal</h1>
+	<form layout="column">
+		<md-input placeholder="Email required" maxlength="100" type="email" [(ngModel)]="user" name="portal-user-email"  ></md-input>
+		<md-input  placeholder="Password required" maxlength="100" type="password" name="portal-user-password"></md-input>
+		<button md-raised-button color="primary">Login</button>
+	</form>
+
+	<button md-raised-button color="primary" (click)="add( user )" >login</button>
+	<ul>
+		<li *ngFor="let person of people">
+			
+		</li>
+		<li>User List: {{ users }}</li>
+	</ul>
+	<button md-raised-button color="primary"  >logout</button>
+	
+</div>

@@ -7,7 +7,7 @@ import { PortalComponent } from '../portal/portal.component';
 const mainRoutes: Routes = [
 	{ path: 'app', component: AppComponent },
 	{ path: 'portal', component: PortalComponent },
-	//{ path: '', redirectTo: 'app', pathMatch: 'full'}
+	{ path: '', redirectTo: 'app', pathMatch: 'full'}
 ];
 
 @NgModule({

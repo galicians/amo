@@ -11,8 +11,8 @@ import 'rxjs/add/operator/catch';
 // to make this service available to DI we need to add the @Injectable annotation
 @Injectable()
 export class IdvQuestionsService {
-  // public baseUrl: string = 'https://1stcreditv5-dev.telrock.com/telrock-tas-war/rest/';
-  public baseUrl: string = 'https://localhost:8443/rest/';
+  public baseUrl: string = 'https://1stcreditv5-dev.telrock.com/telrock-tas-war/rest/';
+  //public baseUrl: string = 'https://localhost:8443/rest/';
   public body: any;
   // public body: string|Array<IdvAnswer>; why this fails;
 
