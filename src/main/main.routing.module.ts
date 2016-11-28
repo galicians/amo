@@ -5,9 +5,11 @@ import { AppComponent } from '../app/app.component';
 import { PortalComponent } from '../portal/portal.component';
 
 const mainRoutes: Routes = [
-	{ path: 'app', component: AppComponent },
-	{ path: 'portal', component: PortalComponent },
-	{ path: '', redirectTo: 'app', pathMatch: 'full'}
+	//{ path: 'app', component: AppComponent },
+	//{ path: 'portal', component: PortalComponent },
+	{ path: '', redirectTo: 'app/idv', pathMatch: 'full'},
+	{ path: 'app', redirectTo: 'app/idv', pathMatch: 'full'},
+	{ path: 'portal', redirectTo: 'portal/auth', pathMatch: 'full'}
 ];
 
 @NgModule({
