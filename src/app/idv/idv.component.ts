@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-idv',
-  //template: 'IDV WORKS!',
+  // template: 'IDV WORKS!',
   templateUrl: './idv.component.html',
   styleUrls: ['./idv.component.css']
 })
@@ -58,7 +58,7 @@ export class IdvComponent implements OnInit {
             console.log('route.data', data);
             this.idvQuestions = data['questions'];
             this.locale = data['properties']['ui.locale'] ;
-            this.locale = this.locale.substr(1,5);
+            this.locale = this.locale.substr(1, 5);
             this.loginDate = data['properties']['ui.loginDate'] ;
           }
         );
@@ -67,7 +67,7 @@ export class IdvComponent implements OnInit {
 
       this.idvQuestions.map(question  => {
         this.validators = [Validators.required];
-        if ( question.dataType === 'DATE' ) this.validators.push( this.validateDate ); 
+        if ( question.dataType === 'DATE' ) this.validators.push( this.validateDate );
         this.formControlItem = new FormControl('', this.validators);
         this.formControlItem.name = question.name;
         this.controlsArray.push(this.formControlItem);

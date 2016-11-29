@@ -1,32 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
-import { ActivatedRoute, Router } from '@angular/router';
-import { IdvQuestionsService } from '../idv/idv-questions.service';
+// import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/observable';
 import { Store } from '@ngrx/store';
 
 import { IE_DISPLAY, IE_HIDE } from '../shared/reducers/app.ui.displayIE.reducer';
-import { APP_JMX_PROPS, APP_PROPERTIES_LOADED, APP_PROPERTIES_NOT_LOADED } from '../shared/reducers/app.constants';
+import { APP_JMX_PROPS, APP_PROPERTIES_LOADED,
+  APP_PROPERTIES_NOT_LOADED } from '../shared/reducers/app.constants';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  // styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
 
-  locale: string;
+  locale;
+  ieIsNull;
   uiDisplayIE;
-  uiIsIEmandatory;
-  routeUiDisplayIE;
-  
-  constructor( 
-	  private route: ActivatedRoute,
-  	translate: TranslateService, 
+  uiIsIEMandatory;
+  ieForms;
+
+  constructor(
+    // private route: ActivatedRoute,
+    translate: TranslateService,
     private _store: Store<any>) {
-      
+
+      console.log( 'APP_JMX_PROPS: ', APP_JMX_PROPS );
       console.log('_store: ', _store);
+
+      this.locale = APP_JMX_PROPS['ui.locale'];
+      this.locale = this.locale.substr(1, 5);
+      this.uiDisplayIE = APP_JMX_PROPS['ui.displayIE'];
+      this.uiIsIEMandatory = APP_JMX_PROPS['ui.isIEMandatory'];
+
+      /*
       _store.select('uiDisplayIEreducer')
         .subscribe( uiDisplayIE => {
           if(this.uiDisplayIE == {}){
@@ -34,10 +42,10 @@ export class WelcomeComponent implements OnInit {
           }
           this.propertiesLoaded();
           this.uiDisplayIE = uiDisplayIE;
-
-          
       });
+      */
 
+      /*
       route.data
         .subscribe(
           data => {
@@ -47,15 +55,12 @@ export class WelcomeComponent implements OnInit {
             this.routeUiDisplayIE = data['properties']['ui.displayIE'];
           }
         );
+      */
 
-        
 
         translate.setDefaultLang(this.locale);
         translate.use(this.locale);
 
-        
-
-        console.log('this.uiDisplayIE: ', this.uiDisplayIE);
   }
 
   ngOnInit() {

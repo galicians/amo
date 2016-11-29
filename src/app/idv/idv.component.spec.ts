@@ -41,11 +41,13 @@ class IdvQuestionsServiceStub {
     public body: any;
 }
 
-describe('Component: Idv', () => {
-
-    export function translateLoaderFactory(http: any) {
+export function translateLoaderFactory(http: any) {
       return new TranslateStaticLoader(http, 'assets/i18n', '.json');
     }
+
+describe('Component: Idv', () => {
+
+
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({

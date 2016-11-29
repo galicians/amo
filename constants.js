@@ -97,13 +97,13 @@ exports.MY_CLIENT_PLUGINS = [
         handler: 'cacheFirst'
       },
       {
-        urlPattern: /^https:\/\/localhost:8443\/rest\/properties/,
-        //urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/properties/,
+        // urlPattern: /^https:\/\/localhost:8443\/rest\/properties/,
+        urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/properties/,
         handler: 'cacheFirst'
       },
       {
-        urlPattern: /^https:\/\/localhost:8443\/rest\/idv\/process/,
-        //urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/idv\/process/,
+        // urlPattern: /^https:\/\/localhost:8443\/rest\/idv\/process/,
+        urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/idv\/process/,
         handler: 'cacheFirst'
       }
     ]
