@@ -1,22 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WelcomeComponent } from './welcome.component';
+import { WelcomeHeadInfoComponent } from './feature/headInfo/welcome.headInfo.component';
 import { TranslateModule } from 'ng2-translate';
-
-// const welcomeRouting: ModuleWithProviders = RouterModule.forChild([
-//   {
-//     path: 'welcome',
-//     component: WelcomeComponent
-//   }
-// ])
-
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule
   ],
-  declarations: [WelcomeComponent],
+  declarations: [WelcomeComponent, WelcomeHeadInfoComponent],
   exports: [ TranslateModule ]
 })
 export class WelcomeModule { }

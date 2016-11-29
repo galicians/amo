@@ -7,6 +7,8 @@ import { IdvComponent } from './idv/idv.component';
 import { IdvResolver } from './idv/idv-questions.resolver';
 import { JmxResolver } from './shared/jmx.resolver';
 
+console.log('APP ROUTING: ');
+
 const appRoutes: Routes = [
 	{
 		path: 'app', 

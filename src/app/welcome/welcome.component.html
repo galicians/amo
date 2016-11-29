@@ -2,3 +2,7 @@
   welcome works! <br>  
   {{ 'welcome.dashboard' | translate }}
 </p>
+
+
+<welcome-head-info [uiDisplayIE]="uiDisplayIE" (ieDisplay)="ieDisplay($event)" (ieHide)="ieHide($event)" ></welcome-head-info>
+

@@ -8,11 +8,14 @@ import { PortalDashboardComponent } from './feature/dashboard/portal.dashboard.c
 
 const portalRoutes: Routes = [
 	{ path: 'portal', 
-	component: PortalComponent, 
+	component: PortalComponent,
 	children: [
-		{ path: 'auth', component: PortalAuthComponent },
-		{ path: 'dashboard', component: PortalDashboardComponent }
-	]},
+	 	{ path: 'auth', component: PortalAuthComponent },
+	 	{ path: 'dashboard', component: PortalDashboardComponent }
+	]
+	},
+	//{ path: 'auth', loadChildren: './feature/auth/portal.auth.module#PortalAuthModule' },
+	//{ path: 'dashboard', loadChildren: './feature/dashboard/portal.dashboard.module#PortalDashboardModule' }
 	//{ path: '**', redirectTo: 'portal', pathMatch: 'prefix'}
 	
 ];
