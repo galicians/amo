@@ -91,6 +91,7 @@ describe('Component: Welcome', () => {
                   return jmxServiceStub;
               });
           this.comp.uiProps = jmxService.getLocalJMXproperties();
+          fixture.detectChanges();
           this.comp.uiLocale = this.comp.uiProps['ui.locale'];
           this.comp.uiIsIEMandatory = this.comp.uiProps['ui.isIEMandatory'];
           this.comp.uiDisplayIE = this.comp.uiProps['ui.displayIE'];
@@ -103,6 +104,12 @@ describe('Component: Welcome', () => {
             'ui.isIEMandatory': true,
             'ui.locale': '"en-gb"'
          };
+
+         let textCheck = /^["']/;
+         if ( textCheck.test( this.comp.uiLocale ) ) {
+           this.comp.uiLocale = this.comp.uiLocale.substr(1, 5);
+         }
+           
      });
 
       it('should have JMX properties available', () => {
@@ -112,11 +119,6 @@ describe('Component: Welcome', () => {
 
       it('should set the locale to EN-GB', () => {
           fixture.detectChanges();
-          let textCheck = /^["']/;
-           if ( textCheck.test( this.comp.uiLocale ) ) {
-               this.comp.uiLocale = this.comp.uiLocale.substr(1,5);
-           }
-           fixture.detectChanges();
           expect(this.comp.uiLocale).toBe('en-gb');
       });
     });
