@@ -11,7 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 
-//import { APP_IMPORTS } from './app.imports';
+// import { APP_IMPORTS } from './app.imports';
 
 
 import { AppComponent } from './app.component';
@@ -25,6 +25,10 @@ import { JmxResolver } from './shared/jmx.resolver';
 import { IdvQuestionsService } from './idv/idv-questions.service';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
+import { uiPropertiesReducer } from '../app/shared/reducers/app.ui.properties.reducer';
+import { uiDisplayIEreducer } from '../app/shared/reducers/app.ui.displayIE.reducer';
+// import { portalUsers } from '../portal/portal.user.reducer';
+import { StoreModule } from '@ngrx/store';
 
 // import { IDVRoutingModule } from './app-routing.module';
 // import { IdvQuestionsService } from "./idv/idv-questions.service";
@@ -47,7 +51,7 @@ export function translateLoaderFactory(http: any) {
   ],
   // list of the dependencies this modules has
   imports: [
-    //APP_IMPORTS,
+    // APP_IMPORTS,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -62,7 +66,9 @@ export function translateLoaderFactory(http: any) {
       // useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
       useFactory: translateLoaderFactory,
       deps: [Http]
-    })
+    }),
+
+    StoreModule.provideStore({ uiPropertiesReducer, uiDisplayIEreducer })
   ],
   // Exports is the list of public components for this NgModule
   // If you forget to put your component in both declarations and 
@@ -74,6 +80,6 @@ export function translateLoaderFactory(http: any) {
   // on the components of this module
   providers: [IdvResolver, IdvQuestionsService, JmxResolver],
   // When we use this module to bootstrap an app, AppComponent should be bootstrapped
-  //bootstrap: [ AppComponent ]
+  // bootstrap: [ AppComponent ]
 })
 export class AppModule { }

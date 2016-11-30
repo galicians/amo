@@ -12,8 +12,8 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class IdvQuestionsService {
 
-  // public baseUrl: string = 'https://1stcreditv5-dev.telrock.com/telrock-tas-war/rest/';
-  public baseUrl: string = 'https://localhost:8443/rest/';
+  public baseUrl: string = 'https://1stcreditv5-dev.telrock.com/telrock-tas-war/rest/';
+  // public baseUrl: string = 'https://localhost:8443/rest/';
 
   public body: any;
   // public body: string|Array<IdvAnswer>; why this fails;
@@ -79,7 +79,7 @@ export class IdvQuestionsService {
   private getRequestOptions() {
     let options = new RequestOptions({
       headers: this.getHeaders(),
-      withCredentials: false
+      withCredentials: false  // true  set to false for local dev
     });
     return options;
   }

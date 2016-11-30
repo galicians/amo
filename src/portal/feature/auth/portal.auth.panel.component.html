@@ -6,10 +6,13 @@
 		<button md-raised-button color="primary">Login</button>
 	</form>
 
-	<button md-raised-button color="primary" (click)="userLoggedIn( user )" >login</button>
-	<div>Current User: {{ user }}</div>
-	<div>User List: {{ users }}</div>
-	<button md-raised-button color="primary" (click)="userLoggedOut()" >logout</button>
+	<button md-raised-button color="primary" (click)="add( user )" >login</button>
+	<ul>
+		<li *ngFor="let person of people">
+			
+		</li>
+		<li>User List: {{ users }}</li>
+	</ul>
+	<button md-raised-button color="primary"  >logout</button>
 	
 </div>
-

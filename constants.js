@@ -86,25 +86,25 @@ exports.MY_CLIENT_PLUGINS = [
     runtimeCaching: [
       { 
         urlPattern: /^https:\/\/maxcdn\.bootstrapcdn\.com\/bootstrap\/3\.3\.7\/css\/bootstrap\.min\.css/,
-        handler: 'fastest'
+        handler: 'cacheFirst'
       },
       {
         urlPattern: /^http:\/\/fonts\.googleapis\.com\/css\?family=Roboto/,
-        handler: 'fastest'
+        handler: 'cacheFirst'
       },
       {
         urlPattern: /^https:\/\/fonts\.googleapis\.com\/icon\?family=Material\+Icons/,
-        handler: 'fastest'
+        handler: 'cacheFirst'
       },
       {
-        urlPattern: /^https:\/\/localhost:8443\/rest\/properties/,
-        // urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/properties/,
-        handler: 'fastest'
+        // urlPattern: /^https:\/\/localhost:8443\/rest\/properties/,
+        urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/properties/,
+        handler: 'cacheFirst'
       },
       {
-        urlPattern: /^https:\/\/localhost:8443\/rest\/idv\/process/,
-        // urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/idv\/process/,
-        handler: 'fastest'
+        // urlPattern: /^https:\/\/localhost:8443\/rest\/idv\/process/,
+        urlPattern: /^https:\/\/1stcreditv5-dev\.telrock\.com\/telrock-tas-war\/rest\/idv\/process/,
+        handler: 'cacheFirst'
       }
     ]
 

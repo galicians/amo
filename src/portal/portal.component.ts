@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 	//templateUrl: './portal.component.html',
 	styleUrls: [ './portal.component.css' ]
 })
-export class PortalComponent {}
+export class PortalComponent {
+
+	
+}

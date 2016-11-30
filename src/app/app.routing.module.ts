@@ -7,22 +7,26 @@ import { IdvComponent } from './idv/idv.component';
 import { IdvResolver } from './idv/idv-questions.resolver';
 import { JmxResolver } from './shared/jmx.resolver';
 
+console.log('APP ROUTING: ');
+
 const appRoutes: Routes = [
-	{
-		path: 'app', 
-		component: AppComponent,
-		children: [
-			{ path: 'idv', component: IdvComponent , resolve: { questions: IdvResolver, properties: JmxResolver }},
-			{ path: 'welcome', component: WelcomeComponent },
-			//{ path: '', redirectTo: '/idv', pathMatch: 'full'}
-		]
-	}
+    {
+        path: 'app',
+        component: AppComponent,
+        children: [
+            { path: 'idv', component: IdvComponent,
+            resolve: { questions: IdvResolver, properties: JmxResolver }},
+            { path: 'welcome', component: WelcomeComponent,
+            resolve: { properties: JmxResolver }},
+            { path: '', redirectTo: '/idv', pathMatch: 'full'}
+        ]
+    }
 ];
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(appRoutes)
-	],
-	exports: [ RouterModule ]
+    imports: [
+        RouterModule.forChild(appRoutes)
+    ],
+    exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
