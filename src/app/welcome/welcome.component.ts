@@ -9,7 +9,6 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
-  template: '',
   providers: [ JMXservice ],
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css']
@@ -32,7 +31,12 @@ export class WelcomeComponent implements OnInit {
 
       this.uiProps = Object.assign({}, jmxService.getLocalJMXproperties() );
       this.uiLocale = this.uiProps['ui.locale'];
-      // this.uiLocale = this.uiLocale.substr(1, 5);
+
+      if ( this.uiLocale ) {
+        let str = this.uiLocale;
+        this.uiLocale = str.substr(1, 5);
+      }
+      
       this.uiIsIEMandatory = this.uiProps['ui.isIEMandatory'];
       this.uiDisplayIE = this.uiProps['ui.displayIE'];
       this.ieIsNull = true;
