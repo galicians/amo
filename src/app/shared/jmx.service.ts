@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { APP_JMX_PROPS } from './reducers/app.constants';
 
 @Injectable()
 export class JMXservice {
     constructor(private http: Http) { }
 
-    // public baseUrl: string = 'https://1stcreditv5-dev.telrock.com/telrock-tas-war/rest/';
-
     public getJMXproperties(): Observable<Response> {
-
         let baseUrl: string = 'https://1stcreditv5-dev.telrock.com/telrock-tas-war/rest/';
         return this.http.get(baseUrl + 'properties', this.getRequestOptions())
             .map((res: Response) => {
                 return (<any>res.json().data);
         });
+    }
+
+    public getLocalJMXproperties() {
+        return APP_JMX_PROPS;
     }
 
     private getRequestOptions() {
