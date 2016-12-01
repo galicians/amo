@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { IdvQuestion } from './idv-question.model';
 import { IdvAnswer } from './idv-answer.model';
+import { REST_BASE_URL } from '../services/constants';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -12,7 +13,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class IdvQuestionsService {
 
-  public baseUrl: string = 'https://1stcreditv5-dev.telrock.com/telrock-tas-war/rest/';
+  public baseUrl: string = REST_BASE_URL;
   // public baseUrl: string = 'https://localhost:8443/rest/';
 
   public body: any;

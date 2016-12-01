@@ -1,10 +1,8 @@
-import { Component, Input, Output, EventEmitter  } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'welcome-head-info',
-    template: `
-        
-    `
+    templateUrl: './welcome.headInfo.component.html'
 })
 export class WelcomeHeadInfoComponent {
     

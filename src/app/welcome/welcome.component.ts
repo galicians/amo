@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { JMXservice } from '../shared/jmx.service';
 import { TranslateService } from 'ng2-translate';
 import { ActivatedRoute } from '@angular/router';
+
+import { UserOverviewComponent } from '../user-overview-panel/user.overview.component';
 // import 'rxjs/add/operator/map';
 // import { Store } from '@ngrx/store';
 
