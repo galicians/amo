@@ -30,7 +30,7 @@
     "e2e:only": "npm run protractor",
     "e2e:live": "npm run e2e -- --elementExplorer",
     "e2e:server": "node prodserver",
-    "pretest": "npm run lint && npm run sass",
+    "pretest": "npm run sass",
     "pretest:once": "npm run lint && npm run sass",
     "pretest:once:ci": "npm run lint",
     "test:once": "karma start",
@@ -111,6 +111,7 @@
     "@ngrx/store": "2.2.1",
     "@ngrx/store-devtools": "3.2.1",
     "@ngrx/store-log-monitor": "3.0.2",
+    "@types/service_worker_api": "0.0.6",
     "angular2-express-engine": "2.1.0-rc.1",
     "angular2-platform-node": "2.1.0-rc.1",
     "angular2-universal": "2.1.0-rc.1",
@@ -122,11 +123,11 @@
     "express": "4.14.0",
     "hammerjs": "~2.0.8",
     "methods": "1.1.2",
+    "ng2-translate": "^3.1.3",
     "ngrx-store-freeze": "0.1.4",
     "ngrx-store-logger": "0.1.7",
     "rxjs": "5.0.0-beta.12",
-    "zone.js": "0.6.26",
-    "ng2-translate": "^3.1.3"
+    "zone.js": "0.6.26"
   },
   "devDependencies": {
     "@types/body-parser": "~0.0.33",
@@ -177,6 +178,7 @@
     "rimraf": "~2.5.4",
     "source-map-loader": "~0.1.5",
     "string-replace-loader": "~1.0.5",
+    "sw-precache-webpack-plugin": "^0.6.3",
     "to-string-loader": "~1.1.5",
     "ts-helpers": "~1.1.1",
     "ts-node": "~1.6.0",
