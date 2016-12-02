@@ -64,6 +64,10 @@ Use `yarn run server:prod` for production server and production watch. Default p
 Use `yarn run universal` to run production build in Universal. To run and build universal in AOT mode, use
 `yarn run universal:aot`. Default universal port is `8000`.
 
+npm test --> to run a watch with all the unit tests
+
+npm e2e -->
+
 Default ports and option to use proxy backend for dev server can be changed in `constants.js` file.
 
 To create AOT version, run `yarn run compile`. This will compile and build script.
