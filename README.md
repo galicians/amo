@@ -53,20 +53,32 @@ yarn start
 
 ## Basic scripts
 
+Use `yarn` to download all the dependencies
+
 Use `yarn start` for dev server. Default dev port is `3000`.
 
-Use `yarn run start:hmr` to run dev server in HMR mode.
-
 Use `yarn run build` for production build.
+
+Use 'yarn run'
+
+Use `yarn run start:hmr` to run dev server in HMR mode.
 
 Use `yarn run server:prod` for production server and production watch. Default production port is `8088`.
 
 Use `yarn run universal` to run production build in Universal. To run and build universal in AOT mode, use
 `yarn run universal:aot`. Default universal port is `8000`.
 
-npm test --> to run a watch with all the unit tests
+#TESTING
 
-npm e2e -->
+yarn test --> to run a watch with all the unit tests
+
+yarn e2e:only --> runs protractor(/test-config/protractor.conf.js(chrome), e2e tests on the dist folder
+
+yarn e2e:phantom --> runs protractor('/test-config/protractor.phantom.conf.js(phantom), e2e tests on the dist folder
+
+yarn e2e:parallel --> runs protractor('/test-config/protractor.parallel.conf.js), runs the tests in all the browsers specified at(/test-config/capabilities.js) in the cloud(browserstack)
+
+yarn e2e:captures --> runs protractor('/test-config/protractor.captures.conf.js), creating screen shots at /e2e/captures 
 
 Default ports and option to use proxy backend for dev server can be changed in `constants.js` file.
 

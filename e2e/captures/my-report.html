@@ -1,0 +1,367 @@
+<html><head><meta charset="utf-8"><style>body { font-family: Arial; }ul { list-style-position: inside; }span.passed { padding: 0 1em; color: green; }span.failed { padding: 0 1em; color: red; }span.pending { padding: 0 1em; color: orange; }span.stacktrace { white-space: pre; border: 1px solid rgb(0, 0, 0); font-size: 9pt; padding: 4px; background-color: rgb(204, 204, 204); }</style><script type="text/javascript">function showhide(id) {var e = document.getElementById(id);e.style.display = (e.style.display == "block") ? "none" : "block";}function buildQuickLinks() {var failedSpecs = document.querySelectorAll("li.failed");var quickLinksContainer = document.getElementById("quickLinks");if (!quickLinksContainer) return;for (var i = 0; i < failedSpecs.length; ++i) {var li = document.createElement("li");var a = document.createElement("a");a.href = "#" + failedSpecs[i].id;a.textContent = failedSpecs[i].dataset.name + "  (" + failedSpecs[i].dataset.browser + ")";li.appendChild(a);quickLinksContainer.appendChild(li);}}function updatePassCount() {var totalPassed = document.querySelectorAll("li.passed").length;var totalFailed = document.querySelectorAll("li.failed").length;var totalSpecs = totalFailed + totalPassed;console.log("passed: %s, failed: %s, total: %s", totalPassed, totalFailed, totalSpecs);document.getElementById("summaryTotalSpecs").textContent = document.getElementById("summaryTotalSpecs").textContent + totalSpecs;document.getElementById("summaryTotalFailed").textContent = document.getElementById("summaryTotalFailed").textContent + totalFailed;if (totalFailed) {document.getElementById("summary").className = "failed";}}function start() {updatePassCount();buildQuickLinks();}window.onload = start;</script></head><body><h1>Report</h1><div id="summary" class="passed"><h4>Summary</h4><ul><li id="summaryTotalSpecs">Total specs tested: </li><li id="summaryTotalFailed">Total failed: </li></ul></div><ul style="list-style-type:none"><h4>IDV (22 s)</h4><li id="16f40710-bba8-11e6-aefd-3ddb7bf6d370" class="failed" data-spec="spec0" data-name="should have a title" data-browser="firefox"><span class="failed">&#10007;</span><a href="firefox/firefox_49.0_windows_IDV should have a title.png">should have a title</a>(11 s)<ul><li>Failed: Angular could not be found on the page http://localhost:3000/app/idv : retries looking for angular exceeded [<a href="javascript:showhide('spec0-WINDOWS-firefox-49.00')">stack</a>]<br/><span style="display: none" id="spec0-WINDOWS-firefox-49.00" class="stacktrace">Error: Angular could not be found on the page http://localhost:3000/app/idv : retries looking for angular exceeded
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/browser.js:516:23
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+From: Task: Run beforeEach in control flow
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:79:14)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at QueueRunner.execute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1923:10)
+    at Spec.queueRunnerFactory (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:714:35)
+    at Spec.execute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:371:10)
+    at Object.fn (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:2579:37)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at QueueRunner.execute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1923:10)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:8:3)
+    at addSpecsToSuite (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:3:1)
+    at Module._compile (module.js:571:32)
+    at Module.m._compile (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:406:23)
+    at Module._extensions..js (module.js:580:10)
+    at Object.require.extensions.(anonymous function) [as .ts] (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:409:12)</span></li><li>Failed: Error while waiting for Protractor to sync with the page: &quot;window.getAllAngularTestabilities is not a function&quot; [<a href="javascript:showhide('spec0-WINDOWS-firefox-49.01')">stack</a>]<br/><span style="display: none" id="spec0-WINDOWS-firefox-49.01" class="stacktrace">Error: Error while waiting for Protractor to sync with the page: &quot;window.getAllAngularTestabilities is not a function&quot;
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/browser.js:270:23
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+From: Task: Run it(&quot;should have a title&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:79:14)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1962:16
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1905:9
+    at Function.next.fail (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1968:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:103:16
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:13:3)
+    at addSpecsToSuite (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:3:1)
+    at Module._compile (module.js:571:32)
+    at Module.m._compile (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:406:23)
+    at Module._extensions..js (module.js:580:10)
+    at Object.require.extensions.(anonymous function) [as .ts] (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:409:12)</span></li></ul></li><li id="16f42e20-bba8-11e6-aefd-3ddb7bf6d370" class="failed" data-spec="spec1" data-name="should have a btn display sign in" data-browser="firefox"><span class="failed">&#10007;</span><a href="firefox/firefox_49.0_windows_IDV should have a btn display sign in.png">should have a btn display sign in</a>(10 s)<ul><li>Failed: waiting for page to load for 10000ms
+Wait timed out after 10043ms [<a href="javascript:showhide('spec1-WINDOWS-firefox-49.00')">stack</a>]<br/><span style="display: none" id="spec1-WINDOWS-firefox-49.00" class="stacktrace">Error: waiting for page to load for 10000ms
+Wait timed out after 10043ms
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2364:22
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+From: Task: waiting for page to load for 10000ms
+    at ControlFlow.wait (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2352:17)
+    at WebDriver.wait (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/webdriver.js:712:29)
+    at ProtractorBrowser.get (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/browser.js:486:14)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:9:13)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:94:23
+    at new ManagedPromise (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1082:7)
+    at controlFlowExecute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:80:18)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+From: Task: Run beforeEach in control flow
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:79:14)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at QueueRunner.execute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1923:10)
+    at Spec.queueRunnerFactory (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:714:35)
+    at Spec.execute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:371:10)
+    at Object.fn (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:2579:37)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1962:16
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:8:3)
+    at addSpecsToSuite (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:3:1)
+    at Module._compile (module.js:571:32)
+    at Module.m._compile (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:406:23)
+    at Module._extensions..js (module.js:580:10)
+    at Object.require.extensions.(anonymous function) [as .ts] (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:409:12)</span></li><li>Failed: Error while waiting for Protractor to sync with the page: &quot;window.getAllAngularTestabilities is not a function&quot; [<a href="javascript:showhide('spec1-WINDOWS-firefox-49.01')">stack</a>]<br/><span style="display: none" id="spec1-WINDOWS-firefox-49.01" class="stacktrace">Error: Error while waiting for Protractor to sync with the page: &quot;window.getAllAngularTestabilities is not a function&quot;
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/browser.js:270:23
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:403:27)
+    at ElementArrayFinder._this.(anonymous function) [as getText] (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:101:30)
+    at ElementFinder.(anonymous function) [as getText] (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:740:22)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:18:26)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:94:23
+    at new ManagedPromise (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1082:7)
+    at controlFlowExecute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:80:18)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2820:25)
+From: Task: Run it(&quot;should have a btn display sign in&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:79:14)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1962:16
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1905:9
+    at Function.next.fail (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1968:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:103:16
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:17:3)
+    at addSpecsToSuite (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:3:1)
+    at Module._compile (module.js:571:32)
+    at Module.m._compile (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:406:23)
+    at Module._extensions..js (module.js:580:10)
+    at Object.require.extensions.(anonymous function) [as .ts] (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:409:12)</span></li></ul></li></ul><a href="javascript:showhide('16f42e21-bba8-11e6-aefd-3ddb7bf6d370')">Toggle Configuration</a><div class="config" id="16f42e21-bba8-11e6-aefd-3ddb7bf6d370" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.5.2</li><li>Browser name:  firefox</li><li>Browser version:  49.0</li><li>Platform:  WINDOWS</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li></div><ul style="list-style-type:none"><h4>IDV (22 s)</h4><li id="183e8870-bba8-11e6-93ae-5f228e37add6" class="failed" data-spec="spec0" data-name="should have a title" data-browser="firefox"><span class="failed">&#10007;</span><a href="firefox/firefox_49.0_OS X_IDV should have a title.png">should have a title</a>(11 s)<ul><li>Failed: Angular could not be found on the page http://localhost:3000/app/idv : retries looking for angular exceeded [<a href="javascript:showhide('spec0-MAC-firefox-49.00')">stack</a>]<br/><span style="display: none" id="spec0-MAC-firefox-49.00" class="stacktrace">Error: Angular could not be found on the page http://localhost:3000/app/idv : retries looking for angular exceeded
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/browser.js:516:23
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+From: Task: Run beforeEach in control flow
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:79:14)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at QueueRunner.execute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1923:10)
+    at Spec.queueRunnerFactory (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:714:35)
+    at Spec.execute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:371:10)
+    at Object.fn (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:2579:37)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at QueueRunner.execute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1923:10)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:8:3)
+    at addSpecsToSuite (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:3:1)
+    at Module._compile (module.js:571:32)
+    at Module.m._compile (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:406:23)
+    at Module._extensions..js (module.js:580:10)
+    at Object.require.extensions.(anonymous function) [as .ts] (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:409:12)</span></li><li>Failed: Error while waiting for Protractor to sync with the page: &quot;window.getAllAngularTestabilities is not a function&quot; [<a href="javascript:showhide('spec0-MAC-firefox-49.01')">stack</a>]<br/><span style="display: none" id="spec0-MAC-firefox-49.01" class="stacktrace">Error: Error while waiting for Protractor to sync with the page: &quot;window.getAllAngularTestabilities is not a function&quot;
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/browser.js:270:23
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+From: Task: Run it(&quot;should have a title&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:79:14)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1962:16
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1905:9
+    at Function.next.fail (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1968:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:103:16
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:13:3)
+    at addSpecsToSuite (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:3:1)
+    at Module._compile (module.js:571:32)
+    at Module.m._compile (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:406:23)
+    at Module._extensions..js (module.js:580:10)
+    at Object.require.extensions.(anonymous function) [as .ts] (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:409:12)</span></li></ul></li><li id="183eaf80-bba8-11e6-93ae-5f228e37add6" class="failed" data-spec="spec1" data-name="should have a btn display sign in" data-browser="firefox"><span class="failed">&#10007;</span><a href="firefox/firefox_49.0_OS X_IDV should have a btn display sign in.png">should have a btn display sign in</a>(11 s)<ul><li>Failed: waiting for page to load for 10000ms
+Wait timed out after 10033ms [<a href="javascript:showhide('spec1-MAC-firefox-49.00')">stack</a>]<br/><span style="display: none" id="spec1-MAC-firefox-49.00" class="stacktrace">Error: waiting for page to load for 10000ms
+Wait timed out after 10033ms
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2364:22
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+From: Task: waiting for page to load for 10000ms
+    at ControlFlow.wait (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2352:17)
+    at WebDriver.wait (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/webdriver.js:712:29)
+    at ProtractorBrowser.get (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/browser.js:486:14)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:9:13)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:94:23
+    at new ManagedPromise (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1082:7)
+    at controlFlowExecute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:80:18)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+From: Task: Run beforeEach in control flow
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:79:14)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at QueueRunner.execute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1923:10)
+    at Spec.queueRunnerFactory (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:714:35)
+    at Spec.execute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:371:10)
+    at Object.fn (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:2579:37)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1962:16
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:8:3)
+    at addSpecsToSuite (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:3:1)
+    at Module._compile (module.js:571:32)
+    at Module.m._compile (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:406:23)
+    at Module._extensions..js (module.js:580:10)
+    at Object.require.extensions.(anonymous function) [as .ts] (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:409:12)</span></li><li>Failed: Error while waiting for Protractor to sync with the page: &quot;window.getAllAngularTestabilities is not a function&quot; [<a href="javascript:showhide('spec1-MAC-firefox-49.01')">stack</a>]<br/><span style="display: none" id="spec1-MAC-firefox-49.01" class="stacktrace">Error: Error while waiting for Protractor to sync with the page: &quot;window.getAllAngularTestabilities is not a function&quot;
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/browser.js:270:23
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:403:27)
+    at ElementArrayFinder._this.(anonymous function) [as getText] (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:101:30)
+    at ElementFinder.(anonymous function) [as getText] (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:740:22)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:18:26)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:94:23
+    at new ManagedPromise (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1082:7)
+    at controlFlowExecute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:80:18)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2820:25)
+From: Task: Run it(&quot;should have a btn display sign in&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:79:14)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1962:16
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1905:9
+    at Function.next.fail (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1968:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:103:16
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:17:3)
+    at addSpecsToSuite (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:3:1)
+    at Module._compile (module.js:571:32)
+    at Module.m._compile (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:406:23)
+    at Module._extensions..js (module.js:580:10)
+    at Object.require.extensions.(anonymous function) [as .ts] (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:409:12)</span></li></ul></li></ul><a href="javascript:showhide('183ed690-bba8-11e6-93ae-5f228e37add6')">Toggle Configuration</a><div class="config" id="183ed690-bba8-11e6-93ae-5f228e37add6" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.5.2</li><li>Browser name:  firefox</li><li>Browser version:  49.0</li><li>Platform:  MAC</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li></div><ul style="list-style-type:none"><h4>IDV (62 s)</h4><li id="2e063f40-bba8-11e6-9a08-078698f9a8be" class="passed" data-spec="spec0" data-name="should have a title" data-browser="chrome"><span class="passed">&#10003;</span><a href="chrome/chrome_undefined_undefined_IDV should have a title.png">should have a title</a>(30 s)</li><li id="2e063f41-bba8-11e6-9a08-078698f9a8be" class="failed" data-spec="spec1" data-name="should have a btn display sign in" data-browser="chrome"><span class="failed">&#10007;</span><a href="chrome/chrome_undefined_undefined_IDV should have a btn display sign in.png">should have a btn display sign in</a>(32 s)<ul><li>Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL. [<a href="javascript:showhide('spec1-MAC-chrome-54.0.2840.590')">stack</a>]<br/><span style="display: none" id="spec1-MAC-chrome-54.0.2840.590" class="stacktrace">Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL.
+    at Timeout._onTimeout (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1973:23)
+    at ontimeout (timers.js:365:14)
+    at tryOnTimeout (timers.js:237:5)
+    at Timer.listOnTimeout (timers.js:207:5)</span></li><li>Failed: No element found using locator: By(css selector, *[id=&quot;login-btn&quot;]) [<a href="javascript:showhide('spec1-MAC-chrome-54.0.2840.591')">stack</a>]<br/><span style="display: none" id="spec1-MAC-chrome-54.0.2840.591" class="stacktrace">NoSuchElementError: No element found using locator: By(css selector, *[id=&quot;login-btn&quot;])
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:717:27
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:403:27)
+    at ElementArrayFinder._this.(anonymous function) [as getText] (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:101:30)
+    at ElementFinder.(anonymous function) [as getText] (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:740:22)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:18:26)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:94:23
+    at new ManagedPromise (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1082:7)
+    at controlFlowExecute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:80:18)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2820:25)
+From: Task: Run it(&quot;should have a btn display sign in&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:79:14)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1962:16
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1905:9
+    at Timeout.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1975:11)
+    at ontimeout (timers.js:365:14)
+    at tryOnTimeout (timers.js:237:5)
+    at Timer.listOnTimeout (timers.js:207:5)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:17:3)
+    at addSpecsToSuite (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:3:1)
+    at Module._compile (module.js:571:32)
+    at Module.m._compile (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:406:23)
+    at Module._extensions..js (module.js:580:10)
+    at Object.require.extensions.(anonymous function) [as .ts] (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:409:12)</span></li></ul></li></ul><a href="javascript:showhide('2e068d60-bba8-11e6-9a08-078698f9a8be')">Toggle Configuration</a><div class="config" id="2e068d60-bba8-11e6-9a08-078698f9a8be" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.5.2</li><li>Browser name:  chrome</li><li>Browser version:  54.0.2840.59</li><li>Platform:  MAC</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li></div><ul style="list-style-type:none"><h4>IDV (75 s)</h4><li id="34ade410-bba8-11e6-b27b-47ca00767983" class="failed" data-spec="spec0" data-name="should have a title" data-browser="chrome"><span class="failed">&#10007;</span><a href="chrome/chrome_undefined_undefined_IDV should have a title.png">should have a title</a>(37 s)<ul><li>Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL. [<a href="javascript:showhide('spec0-WINDOWS-chrome-54.0.2840.590')">stack</a>]<br/><span style="display: none" id="spec0-WINDOWS-chrome-54.0.2840.590" class="stacktrace">Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL.
+    at Timeout._onTimeout (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1973:23)
+    at ontimeout (timers.js:365:14)
+    at tryOnTimeout (timers.js:237:5)
+    at Timer.listOnTimeout (timers.js:207:5)</span></li></ul></li><li id="34ae3230-bba8-11e6-b27b-47ca00767983" class="failed" data-spec="spec1" data-name="should have a btn display sign in" data-browser="chrome"><span class="failed">&#10007;</span><a href="chrome/chrome_undefined_undefined_IDV should have a btn display sign in.png">should have a btn display sign in</a>(38 s)<ul><li>Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL. [<a href="javascript:showhide('spec1-WINDOWS-chrome-54.0.2840.590')">stack</a>]<br/><span style="display: none" id="spec1-WINDOWS-chrome-54.0.2840.590" class="stacktrace">Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL.
+    at Timeout._onTimeout (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1973:23)
+    at ontimeout (timers.js:365:14)
+    at tryOnTimeout (timers.js:237:5)
+    at Timer.listOnTimeout (timers.js:207:5)</span></li><li>Failed: No element found using locator: By(css selector, *[id=&quot;login-btn&quot;]) [<a href="javascript:showhide('spec1-WINDOWS-chrome-54.0.2840.591')">stack</a>]<br/><span style="display: none" id="spec1-WINDOWS-chrome-54.0.2840.591" class="stacktrace">NoSuchElementError: No element found using locator: By(css selector, *[id=&quot;login-btn&quot;])
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:717:27
+    at ManagedPromise.invokeCallback_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1379:14)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2775:27)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:403:27)
+    at ElementArrayFinder._this.(anonymous function) [as getText] (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:101:30)
+    at ElementFinder.(anonymous function) [as getText] (/Users/pablo/projects/angular2_admin_portal/node_modules/protractor/built/element.js:740:22)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:18:26)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:94:23
+    at new ManagedPromise (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:1082:7)
+    at controlFlowExecute (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:80:18)
+    at TaskQueue.execute_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2913:14)
+    at TaskQueue.executeNext_ (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2896:21)
+    at asyncRun (/Users/pablo/projects/angular2_admin_portal/node_modules/selenium-webdriver/lib/promise.js:2820:25)
+From: Task: Run it(&quot;should have a btn display sign in&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasminewd2/index.js:79:14)
+    at attemptAsync (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1962:16
+    at /Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1905:9
+    at Timeout.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1975:11)
+    at ontimeout (timers.js:365:14)
+    at tryOnTimeout (timers.js:237:5)
+    at Timer.listOnTimeout (timers.js:207:5)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:17:3)
+    at addSpecsToSuite (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/Users/pablo/projects/angular2_admin_portal/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/pablo/projects/angular2_admin_portal/e2e/idv.spec.e2e.ts:3:1)
+    at Module._compile (module.js:571:32)
+    at Module.m._compile (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:406:23)
+    at Module._extensions..js (module.js:580:10)
+    at Object.require.extensions.(anonymous function) [as .ts] (/Users/pablo/projects/angular2_admin_portal/node_modules/ts-node/src/index.ts:409:12)</span></li></ul></li></ul><a href="javascript:showhide('34afdfe0-bba8-11e6-b27b-47ca00767983')">Toggle Configuration</a><div class="config" id="34afdfe0-bba8-11e6-b27b-47ca00767983" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.5.2</li><li>Browser name:  chrome</li><li>Browser version:  54.0.2840.59</li><li>Platform:  WINDOWS</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li></div>
