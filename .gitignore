@@ -33,3 +33,5 @@ ts-node
 /**/*.css.ts
 /**/*.css.shim.ts
 dll/
+/e2e/captures/**/*.*
+phamtomjsdriver.log
